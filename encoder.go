@@ -111,9 +111,6 @@ func (enc Encoder) WriteStringHeader(len int) error {
 //   - bool
 //   - int family (int, int8, int16, int32, int64, uint, uint8, uint16, uint32, uint64)
 //   - string
-//
-// TODO: float family
-// TODO: binary ([]byte)
 func (enc Encoder) Encode(v any) error {
 	switch v := v.(type) {
 	// nil
@@ -149,8 +146,17 @@ func (enc Encoder) Encode(v any) error {
 	case uint64:
 		return enc.EncodeUint64(v)
 
+	// float family
+	case float32:
+		return enc.EncodeFloat32(v)
+	case float64:
+		return enc.EncodeFloat64(v)
+
+	// slices/arrays
 	case []int:
 		return EncodeArray(enc, v, func(enc Encoder, v int) error { return enc.EncodeInt(v) })
+	case []byte:
+		return enc.EncodeBytes(v)
 
 	// string
 	case string:
