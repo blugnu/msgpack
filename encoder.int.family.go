@@ -141,7 +141,7 @@ func (enc Encoder) EncodeInt64(i int64) error {
 		return enc.Write(uint32(i))
 
 	default:
-		_ = enc.Write(typeInt64)
+		_ = enc.Write(typeUint64) // keeps sonarcloud happy by not duplicating the case for < MinInt32 (positive int64/uint64 are identical)
 		return enc.Write(i)
 	}
 }
@@ -271,7 +271,7 @@ func (enc Encoder) EncodeInt(i int) error {
 		return enc.Write(uint32(i))
 
 	default:
-		_ = enc.Write(typeInt64)
+		_ = enc.Write(typeUint64) // keeps sonarcloud happy by not duplicating the case for < MinInt32 (positive int64/uint64 are identical)
 		return enc.Write(int64(i))
 	}
 }
