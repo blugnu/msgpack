@@ -1,7 +1,7 @@
 <div align="center" style="margin-bottom:20px">
   <!-- <img src=".assets/banner.png" alt="logger" /> -->
   <div align="center">
-    <a href="https://github.com/blugnu/msgpack/actions/workflows/qa.yml"><img alt="build-status" src="https://github.com/blugnu/msgpack/actions/workflows/qa.yml/badge.svg?branch=master&style=flat-square"/></a>
+    <a href="https://github.com/blugnu/msgpack/actions/workflows/pipeline.yml"><img alt="build-status" src="https://github.com/blugnu/msgpack/actions/workflows/pipeline.yml/badge.svg?branch=master&style=flat-square"/></a>
     <a href="https://goreportcard.com/report/github.com/blugnu/msgpack" ><img alt="go report" src="https://goreportcard.com/badge/github.com/blugnu/msgpack"/></a>
     <a><img alt="go version >= 1.18" src="https://img.shields.io/github/go-mod/go-version/blugnu/msgpack?style=flat-square"/></a>
     <a href="https://github.com/blugnu/msgpack/blob/master/LICENSE"><img alt="MIT License" src="https://img.shields.io/github/license/blugnu/msgpack?color=%234275f5&style=flat-square"/></a>
